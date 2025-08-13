@@ -1,69 +1,156 @@
-# Welcome to your zeniq project
 
-## Project info
+# Zeniq
 
-**URL**: https://zeniq.dev/projects/a8baea9a-97ae-4008-b023-5de63357c0e2
+**Zeniq** is a modern, dark-themed, Gen-Z inspired stock market dashboard—reimagined from a MarketPulse template—built with a neon pop-art aesthetic, complete authentication powered by Supabase, responsive frontend, and a fully functional backend.  
+Developed by **Sumit Das** & **Nandini Das**.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## ✨ Features
 
-**Use zeniq**
+- **Branding & Design**
+  - All “MarketPulse” replaced with **Zeniq**
+  - Neon-glow, dark pop-art theme (cyan, pink, purple, lime)
+  - Futuristic icon-only logo
+- **Core Pages (fully redesigned)**
+  - **Dashboard**: Glassmorphism cards, animated glow, mini-charts, interactive sidebar
+  - **Stocks / Markets / Currencies / Global / Portfolio / Performance** pages with micro-interactions
+  - **Removed:** Analysis & Settings pages
+- **Hero Landing Page**
+  - Fullscreen dark backdrop with animated neon lines
+  - Pop-art illustrations blending charts, cityscapes, coins, and arrows
+  - Headline: *“Zeniq – Your Gen Z Gateway to the Markets”*
+- **Authentication**
+  - Pop-art login/signup page
+  - Secure signup/login via **Supabase**
+  - Forgot password flow
+- **Data Integration**
+  - Stock data from free APIs (Alpha Vantage, Yahoo Finance, NSE India)
+  - Real-time updates via WebSockets or Supabase Realtime
+- **Responsiveness**
+  - Optimized for desktop, tablet, and mobile
+- **Animations**
+  - Neon hover effects, ripple clicks, animated loading states, interactive charts
 
-Simply visit the [zeniq Project](https://zeniq.dev/projects/a8baea9a-97ae-4008-b023-5de63357c0e2) and start prompting.
+---
 
-Changes made via zeniq will be committed automatically to this repo.
+## 🛠 Tech Stack
 
-**Use your preferred IDE**
+| Layer       | Technology(s)                               |
+|-------------|---------------------------------------------|
+| Frontend    | React, Tailwind CSS, Chart.js (or similar)   |
+| Backend     | Supabase (Auth + Database + Realtime)        |
+| APIs        | Free stock data APIs                         |
+| Deployment  | Netlify / Vercel (frontend), Supabase (backend) |
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in zeniq.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 🚀 Getting Started
 
-Follow these steps:
+### Prerequisites
+- Node.js v14+
+- npm or Yarn
+- Git
+- Supabase account
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Installation
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/SumitkCodes/Zeniq.git
+   cd Zeniq
+    ```
+2. **Install dependencies**
 
-# Step 3: Install the necessary dependencies.
-npm i
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+3. **Configure environment variables**
+   Create a `.env.local` file in the root:
+
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url_here
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key_here
+   NEXT_PUBLIC_STOCK_API_KEY=your_stock_api_key_here
+   ```
+
+4. **Connect Supabase**
+
+   * Set up a Supabase project with Auth & Database
+   * Enable email/password authentication
+   * Create tables (`users`, `watchlists`, `portfolios`, `preferences`)
+   * Add Supabase credentials to `.env.local`
+
+5. **Run the development server**
+
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+6. **Open in browser**
+
+   ```
+   http://localhost:3000
+   ```
+
+---
+
+## 📂 Folder Structure
+
+```
+/public
+  └── assets (logo, favicon, illustrations)
+/src
+  ├── components
+  │   ├── Dashboard/
+  │   ├── Auth/
+  │   ├── Hero/
+  │   ├── Navbar/
+  │   ├── Charts/
+  │   └── UI/ (buttons, cards, loaders)
+/pages
+  ├── index.js (Hero + CTA)
+  ├── dashboard.js
+  ├── stocks.js
+  ├── markets.js
+  ├── currencies.js
+  ├── global.js
+  ├── portfolio.js
+  ├── performance.js
+  ├── auth/
+  │   ├── login.js
+  │   ├── signup.js
+  │   └── forgot-password.js
+  └── _app.js, _document.js
+/utils
+  ├── api.js
+  └── supabaseClient.js
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🎨 Design Vision
 
-**Use GitHub Codespaces**
+* **Primary BG:** `#0C0C0E`
+* **Accents:** Neon Cyan `#00FFF7`, Neon Pink `#FF4EDB`, Neon Purple `#A259FF`, Neon Lime `#B6FF00`
+* **Fonts:** *Space Grotesk* / *Clash Display* (headings), *Inter* (body), *IBM Plex Mono* (numbers)
+* **Effects:** Glassmorphism, neon glow, micro-animations
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## 👥 Contributors
+Sumit Das & Nandini Das
 
-This project is built with .
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 📜 License
 
-## How can I deploy this project?
+Distributed under the MIT License. See `LICENSE` for details.
 
-Simply open [zeniq](https://zeniq.dev/projects/a8baea9a-97ae-4008-b023-5de63357c0e2) and click on Share -> Publish.
+---
 
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.zeniq.dev/tips-tricks/custom-domain/)
