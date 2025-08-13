@@ -3,7 +3,7 @@
 
 **Zeniq** is a modern, dark-themed, Gen-Z inspired stock market dashboard—reimagined from a MarketPulse template—built with a neon pop-art aesthetic, complete authentication powered by Supabase, responsive frontend, and a fully functional backend.  
 Developed by **Sumit Das** & **Nandini Das**.
-
+LINK https://zeniqtradeapp.vercel.app/
 ---
 
 ## ✨ Features
