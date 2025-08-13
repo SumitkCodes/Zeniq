@@ -1,0 +1,193 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+:root {
+    /* Zeniq Dark Pop Art Theme */
+    --background: 200 10% 5%;  /* Deep black-charcoal #0C0C0E */
+    --foreground: 0 0% 100%;   /* Pure white */
+
+    --card: 200 10% 8%;        /* Slightly lighter than background */
+    --card-foreground: 0 0% 100%;
+
+    --popover: 200 10% 8%;
+    --popover-foreground: 0 0% 100%;
+
+    /* Neon Cyan Primary */
+    --primary: 178 100% 50%;    /* Neon Cyan #00FFF7 */
+    --primary-foreground: 200 10% 5%;
+
+    --secondary: 200 5% 15%;    /* Dark gray */
+    --secondary-foreground: 0 0% 70%;  /* Light gray #B3B3B3 */
+
+    --muted: 200 5% 15%;
+    --muted-foreground: 0 0% 70%;
+
+    /* Neon Purple Accent */
+    --accent: 270 100% 67%;     /* Neon Purple #A259FF */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 348 100% 61%; /* Neon Red #FF3C5F */
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 158 100% 55%;     /* Neon Green #00FF88 */
+    --success-foreground: 200 10% 5%;
+
+    --warning: 62 100% 60%;      /* Neon Lime #B6FF00 */
+    --warning-foreground: 200 10% 5%;
+
+    --danger: 348 100% 61%;      /* Neon Red #FF3C5F */
+    --danger-foreground: 0 0% 100%;
+
+    /* Neon Pink for special elements */
+    --neon-pink: 315 100% 65%;   /* #FF4EDB */
+    --neon-cyan: 178 100% 50%;   /* #00FFF7 */
+    --neon-purple: 270 100% 67%; /* #A259FF */
+    --neon-lime: 62 100% 60%;    /* #B6FF00 */
+
+    --border: 200 5% 20%;
+    --input: 200 5% 15%;
+    --ring: 178 100% 50%;        /* Neon cyan ring */
+
+    --radius: 1rem;              /* Increased for modern look */
+
+    --sidebar-background: 200 10% 6%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 178 100% 50%;
+    --sidebar-primary-foreground: 200 10% 5%;
+    --sidebar-accent: 200 5% 12%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 200 5% 15%;
+    --sidebar-ring: 178 100% 50%;
+  }
+
+  .dark {
+    /* Zeniq stays dark themed in both modes */
+    --background: 200 10% 5%;
+    --foreground: 0 0% 100%;
+
+    --card: 200 10% 8%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 200 10% 8%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 178 100% 50%;
+    --primary-foreground: 200 10% 5%;
+
+    --secondary: 200 5% 15%;
+    --secondary-foreground: 0 0% 70%;
+
+    --muted: 200 5% 15%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 270 100% 67%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 348 100% 61%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 158 100% 55%;
+    --success-foreground: 200 10% 5%;
+
+    --warning: 62 100% 60%;
+    --warning-foreground: 200 10% 5%;
+
+    --danger: 348 100% 61%;
+    --danger-foreground: 0 0% 100%;
+
+    --border: 200 5% 20%;
+    --input: 200 5% 15%;
+    --ring: 178 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body {
+    @apply h-full overflow-x-hidden antialiased;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  /* Zeniq Glassmorphism */
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-primary/20 shadow-glass;
+  }
+
+  .glass-neon {
+    @apply bg-black/20 backdrop-blur-xl border border-primary/30 shadow-glass;
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.1);
+  }
+
+  /* Neon glow effects */
+  .neon-glow {
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.5), 0 0 20px hsl(var(--primary) / 0.3);
+  }
+
+  .neon-glow-pink {
+    box-shadow: 0 0 10px hsl(var(--neon-pink) / 0.5), 0 0 20px hsl(var(--neon-pink) / 0.3);
+  }
+
+  .neon-text {
+    text-shadow: 0 0 10px hsl(var(--primary) / 0.8);
+  }
+
+  /* Card transitions */
+  .card-hover-effect {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  /* Custom scrollbar for webkit browsers */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+
+  /* Chart & data visualization styles */
+  .chart-container {
+    @apply w-full h-full min-h-[200px] rounded-lg overflow-hidden;
+  }
+
+  .animate-enter {
+    @apply animate-slide-up;
+  }
+
+  /* Stock price trends */
+  .trend-up {
+    @apply text-success;
+  }
+  
+  .trend-down {
+    @apply text-danger;
+  }
+
+  /* Loading states */
+  .loading-pulse {
+    @apply animate-pulse-gentle;
+  }
+}
